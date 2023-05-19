@@ -1,2 +1,4 @@
-const sum = (a, b) => a + b;
-console.log(sum(2, 10));
+let toggle = document.querySelector('.toggle');
+toggle.onclick = function() {
+	toggle.classList.toggle('active')
+}

@@ -1,13 +1,111 @@
 /* Стили шапки сайта */
-@import "vars"
-
-.test-header 
-	color: navajowhite
+.header 
+	height: 100vh
+	padding-top: 1.2rem
+	background-image: url(../img/header-bg.jpg)
+	background-repeat: no-repeat
+	background-size: cover
+	background-position: center
+.header__top 
+	@include glass
+	padding: 1.2rem 1.8rem
+	min-height: 3rem
 	display: flex
+	justify-content: space-between
+	align-items: center
+	gap: 1rem
+	@media (max-width: 990px)
+		padding: .95rem 1.5rem
+		gap: .8rem
+	@media (max-width: 750px)
+		padding: .6rem 1rem
+
+	.toggle
+		@extend .toggle
+		@media (max-width: 650px)
+			display: block
+	@media (max-width: 990px)
+		min-height: fit-content
+.header__logo
+	width: 10%
+	height: auto
+	&-link
+		transition: fill .35s ease
+	&-link:hover
+		svg
+			path, rect
+				fill: $accent
+	@media (max-width: 900px)
+		width: 15%
+	@media (max-width: 650px)
+		width: 20%
+	
+.header__menu 
+	text-transform: uppercase
+	font-size: 1.5em
+	font-family: $fontTitle
+	color: $whiteText
+	letter-spacing: 1px
+	@media (max-width: 1300px)
+		font-size: 1.2rem
+	@media (max-width: 1040px)
+		font-size: 0.8rem
+	@media (max-width: 750px)
+		font-size: 0.65rem
+	@media (max-width: 650px)
+		display: none
+.header__menu-list 
+	display: flex
+	justify-content: space-between
+	align-items: center
+.header__menu-item
+	margin-right: 0.2rem
+	padding: 0.8rem 1.4rem 0.45rem
+	text-align: center
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35)
+	font-weight: 700
+	@media (max-width: 1300px)
+		padding: 0.8rem 1rem 0.45rem
+	@media (max-width: 990px)
+		padding: 0.6rem 0.5rem 0.35rem
+	&.active
+		background-color: rgba(#E4E4E4,0.8)
+		color: rgba($accent, .8)
+		font-weight: 700
+		border-radius: 1.8rem
+		text-shadow: 0px 4px 4px rgba(#fff, 0.25)
+
+
+
+.header__menu-link 
+	position: relative
+	overflow: hidden
+	span
+		position: relative
+		transition: 0.5s
+		overflow: hidden
+		.out
+			display: inline-flex
+		.in
+			position: absolute
+			left: 0
+			color: $accent
+			transform: translateY(100%)
+	&:hover
+		span
+			.out
+				transform: translateY(-100%)
+			.in
+				transform: translateY(0)
+.header__center 
+.header__bottom 
+
+
 
 @media (max-width: 700px) 
-	p 
-		display: none
+	// p 
+	// 	display: none
 
-span 
-	font-size: 10px
+
+
+

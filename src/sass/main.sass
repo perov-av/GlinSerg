@@ -1,14 +1,33 @@
+//Подключение модулей
 @import "block/reset"
-/* Подключаем шрифты */
+@import "block/fonts"
+@import "block/vars"
+@import "block/extends"
+
 
 /* Ниже подключаем отдельные файлы CSS по блокам и по подключаемым библиотекам */
 @import "block/header"
 @import "block/footer"
 
-/* Основные стили */
-footer
-	color: #0704b6
+/* Основные базовые стили */
+
+body
+	font-family: $fontMain
 	font-size: $basefz
-h1
-	font-size: 32px
-	font-weight: 900
+	background-image: url(../img/bg-texture.jpg)
+	line-height: $basefz
+	@media (max-width: 1000px)
+		font-size: $fzMiddle
+	@media (max-width: 700px)
+		font-size: $fzSmall
+
+img 
+	max-width: 100%
+	height: auto
+a
+	display: inline-block
+.container
+	max-width: 1340px
+	margin: 0 auto
+	padding: 0 20px
+

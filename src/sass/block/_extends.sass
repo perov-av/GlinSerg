@@ -1,0 +1,57 @@
+//Пример шпблона
+
+// %test
+// 	display: flex
+// 	gap: 2rem
+
+//Пример использования
+// .someclass
+// 	@extend %test
+
+// Бургер для меню в шапке
+.toggle
+	display: none
+	width: 35px
+	height: 3px
+	// padding: 15px 8px
+	cursor: pointer
+	background-color: $whiteText
+	position: relative
+	transition: all .4s ease
+	&.active
+		background-color: transparent
+		transition: all .4s ease
+	&::before
+		content: ''
+		display: block
+		width: 25px
+		height: 3px
+		background-color: $whiteText
+		position: absolute
+		top: -10px
+		right: 0
+		transition: all .4s ease
+	&::after
+		content: ''
+		display: block
+		width: 45px
+		height: 3px
+		background-color: $whiteText
+		position: absolute
+		top: 10px
+		right: 0
+		transition: all .4s ease
+	&.active::before
+		width: 35px
+		transform: translateY(10px) rotate(45deg)
+		opacity: 1
+	&.active::after
+		width: 35px
+		transform: translateY(-10px) rotate(-45deg)
+// Миксины
+@mixin glass
+	
+	background: rgba(#424B39, .5)
+	// backdrop-filter: blur(8px)
+	// box-shadow: 0 20px 15px rgba(0, 0, 0, .2)
+	border-radius: 10px
