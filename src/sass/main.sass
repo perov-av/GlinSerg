@@ -5,17 +5,13 @@
 @import "block/extends"
 
 
-/* Ниже подключаем отдельные файлы CSS по блокам и по подключаемым библиотекам */
-@import "block/header"
-@import "block/footer"
-
 /* Основные базовые стили */
 
 body
 	font-family: $fontMain
 	font-size: $basefz
 	background-image: url(../img/bg-texture.jpg)
-	line-height: $basefz
+	// line-height: $basefz
 	@media (max-width: 1000px)
 		font-size: $fzMiddle
 	@media (max-width: 700px)
@@ -30,4 +26,12 @@ a
 	max-width: 1340px
 	margin: 0 auto
 	padding: 0 20px
+	height: 100%
+
+/* Ниже подключаем отдельные файлы CSS по блокам и по подключаемым библиотекам */
+@import "block/header"
+@import "block/footer"
+
+
+@import "block/media"
 

@@ -48,10 +48,22 @@
 	&.active::after
 		width: 35px
 		transform: translateY(-10px) rotate(-45deg)
+
+.btn
+	display: block
+	padding: 20px 32px
+	text-transform: uppercase
+	font-weight: 700
+	font-size: 24px
+	background: rgba(191, 146, 126, 0.78)
+	border-radius: 30px
+
+
+
 // Миксины
 @mixin glass
 	
-	background: rgba(#424B39, .5)
+	background: rgba($bgTop, .5)
 	// backdrop-filter: blur(8px)
 	// box-shadow: 0 20px 15px rgba(0, 0, 0, .2)
 	border-radius: 10px
