@@ -9,24 +9,17 @@
 
 body
 	font-family: $fontMain
-	font-size: $basefz
-	background-image: url(../img/bg-texture.jpg)
-	// line-height: $basefz
-	@media (max-width: 1000px)
-		font-size: $fzMiddle
-	@media (max-width: 700px)
-		font-size: $fzSmall
-
+	font-size: $fz
+	line-height: 1.6
 img 
 	max-width: 100%
 	height: auto
 a
 	display: inline-block
 .container
-	max-width: 1340px
+	max-width: 1240px
 	margin: 0 auto
 	padding: 0 20px
-	height: 100%
 
 /* Ниже подключаем отдельные файлы CSS по блокам и по подключаемым библиотекам */
 @import "block/header"

@@ -1,176 +1,72 @@
 /* Стили шапки сайта */
-.header 
-	height: 100vh
-	padding-top: 1.2rem
-	background-image: url(../img/header-bg.jpg)
+.logo, .layer-1, .layer-2, .layer-5, .layer-6
+	background-position: center
 	background-repeat: no-repeat
 	background-size: cover
-	background-position: center
-.header__top 
-	position: relative
-	@include glass
-	padding: 1.2rem 1.8rem
-	display: flex
-	justify-content: space-between
-	align-items: center
-	gap: 1rem
-	.toggle
-		@extend .toggle
-.header__logo
-	width: 10%
-	height: auto
-	&-link
-		transition: fill .35s ease
-	&-link:hover
-		svg
-			path, rect
-				fill: $accent
 
-.header__menu 
-	text-transform: uppercase
-	font-size: 1.5em
-	font-family: $fontTitle
-	color: $whiteText
-	letter-spacing: 1px
+.layer-5, .layer-6, .layer-4
+	pointer-events: none
 
-.header__menu-list 
-	display: flex
-	justify-content: space-between
-	align-items: center
+.header
+	background-color: $dark
+	font-weight: 900
+	color: $white
 
-.header__menu-item
-	margin-right: 0.2rem
-	padding: 0.8rem 1.4rem 0.45rem
-	text-align: center
-	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35)
-	font-weight: 700
-	&.active
-		background-color: rgba(#E4E4E4,0.5)
-		color: rgba($whiteText, 1)
-		font-weight: 700
-		border-radius: 1.8rem
-		text-shadow: 0px 4px 4px rgba(#fff, 0.25)
-
-.header__menu.active
-	display: block
+.logo
+	width: calc( $index * 12 )
+	height: calc( $index * 10 )
 	position: absolute
-	min-width: 220px
-	max-width: 350px
-	top: 70px
-	right: 0
-	background-color: rgba($bgTop, .5) 
-	padding: 2rem
-	font-size: 2rem
-	border-radius: 10px
-	z-index: 99
-	.header__menu-list
-		display: flex
-		flex-direction: column
-		.header__menu-item
-			padding: 1rem 1rem .45rem
-			margin-bottom: 0.5rem
+	left: 50%
+	top: 20%
+	transform: translateX(-50%)
+	z-index: 2
 
-.header__menu-link 
-	position: relative
+.layers
+	perspective: 900px
 	overflow: hidden
-	span
-		position: relative
-		transition: 0.5s
-		overflow: hidden
-		.out
-			display: inline-flex
-		.in
-			position: absolute
-			left: 0
-			color: rgba($accent, .8)
-			transform: translateY(100%)
-	&:hover
-		span
-			.out
-				transform: translateY(-100%)
-			.in
-				transform: translateY(0)
-.header-wrap
+	&__container
+		height: 100vh
+		transform-style: preserve-3d
+		transform: rotateX(var(--move-y)) rotateY(var(--move-x))
+		will-change: transform
+		min-height: 500px
+		transition: $trans
+.layers__item 
+	position: absolute
+	inset: -5vw
+	display: flex
+	align-items: center
+	justify-content: center
+
+.layers__content
 	display: flex
 	flex-direction: column
-	justify-content: space-between
-	height: 100%
-.header__center 
-	flex-grow: 1
-	text-align: center
-	margin-top: 5rem
-	margin-bottom: 3.75rem
-	&-logo
-		width: 50%
-		margin: 0 auto 9rem
-		background: rgba(33, 53, 35, 0.23)
-		padding: 1rem 2rem
-	&-info
-		max-width: 41rem
-		padding: 0.8rem 1.5rem
-		margin: 0 auto
-		background: rgba(67, 41, 26, 0.24)
-	&-title
-		font-size: 2.8rem
-		color: $whiteText
-		text-transform: uppercase
-		margin-bottom: 0.5rem	
-	&-phone
-		color: $whiteText
-		font-size: 2.5rem
-	
-.header__bottom 
-	display: flex
-	padding-left: 1rem
-	padding-right: 3.8rem
-	padding-bottom: 1.3rem
-	justify-content: space-between
+	justify-content: space-around
+	gap: calc( $index * 4 )
 	align-items: center
-	flex-wrap: wrap
-	position: relative
-	color: $whiteText
-	background: rgba(115, 69, 69, 0.5)
-	.header__bottom-info
-		width: 40%
-		address
-			font-size: 18px
-			font-weight: 500
-			display: block
-			margin-bottom: 8px
-	.header__bottom-btn
-		position: absolute
-		top: 50%
-		left: 50%
-		transform: translate(-50%, -50%)
-	.header__bottom-contacts
-		font-size: 18px
+	padding-top: calc( $index * 10 )
+	p
+		font-size: calc( $index * 1.2 )
+		letter-spacing: 2px
+		font-weight: 400
+		font-style: italic
 
-.header__bottom-info-title, .header__bottom-social-title
-	text-transform: uppercase
-	font-weight: 500
-	font-size: 20px
-	padding-top: 24px
-	margin-bottom: 5px
+.layer-1
+	transform: translateZ(-60px) scale(1.06)
+.layer-2
+	transform: translateZ(80px) scale(.88)
+.layer-3
+	transform: translateZ(180px) scale(.8)
+.layer-4
+	transform: translateZ(190px) scale(.88)
+.layer-5
+	transform: translateZ(300px) scale(.9)
+.layer-6
+	transform: translateZ(360px)
 
-.header__bottom-social-title
-	padding-top: 0
-	font-weight: 400
-	margin-bottom: 17px
-
-.header__bottom-social-wrap
-	display: flex
-	gap: 13px
-	align-items: center
-	.header__bottom-social-item
-		display: flex
-		height: 56px
-		width: 56px
-		border-radius: 10px
-		background-color: #B18D83
-		text-align: center
-		justify-content: center
-		align-items: center
-		
-
-
-
+.layers-btn
+	font-size: calc( $index * .8 )
+	text-transform: none
+	letter-spacing: 2px
+	font-weight: normal
+	padding: calc( $index * .5 ) calc( $index * .9 )

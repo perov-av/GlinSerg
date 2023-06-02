@@ -15,7 +15,7 @@
 	height: 3px
 	// padding: 15px 8px
 	cursor: pointer
-	background-color: $whiteText
+	background-color: $white
 	position: relative
 	transition: all .4s ease
 	&.active
@@ -26,7 +26,7 @@
 		display: block
 		width: 25px
 		height: 3px
-		background-color: $whiteText
+		background-color: $white
 		position: absolute
 		top: -10px
 		right: 0
@@ -36,7 +36,7 @@
 		display: block
 		width: 45px
 		height: 3px
-		background-color: $whiteText
+		background-color: $white
 		position: absolute
 		top: 10px
 		right: 0
@@ -51,19 +51,19 @@
 
 .btn
 	display: block
-	padding: 20px 32px
+	padding: 15px 25px
 	text-transform: uppercase
 	font-weight: 700
 	font-size: 24px
-	background: rgba(191, 146, 126, 0.78)
-	border-radius: 30px
+	background: rgba($accent, 1)
+	border-radius: 40px
 
 
 
 // Миксины
 @mixin glass
 	
-	background: rgba($bgTop, .5)
-	// backdrop-filter: blur(8px)
-	// box-shadow: 0 20px 15px rgba(0, 0, 0, .2)
+	background: rgba($white, .5)
+	backdrop-filter: blur(8px)
+	box-shadow: 0 20px 15px rgba(0, 0, 0, .2)
 	border-radius: 10px
