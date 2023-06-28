@@ -135,21 +135,21 @@ const img = () => {
 } 
 
 // Обработка шрифтов
-const font = () => {
-	return src(path.font.src)
+const fonts = () => {
+	return src(path.fonts.src)
 	.pipe(plumber({
 		errorHandler: notify.onError(error => ({
 			title: "Ошибка в Шрифтах",
 			message: error.message
 		}))
 	}))
-	.pipe(newer(path.font.dest))
+	.pipe(newer(path.fonts.dest))
 	.pipe(fonter({
 		formats: ["ttf", "woff", "eot", "svg"]
 	}))
-	.pipe(dest(path.font.dest))
+	.pipe(dest(path.fonts.dest))
 	.pipe(ttf2woff2())
-	.pipe(dest(path.font.dest));
+	.pipe(dest(path.fonts.dest));
 } 
 
 
@@ -160,7 +160,7 @@ const wather = () => {
 	watch(path.sass.watch, sass).on("all", browserSync.reload);
 	watch(path.js.watch, js).on("all", browserSync.reload);
 	watch(path.img.watch, img).on("all", browserSync.reload);
-	watch(path.font.watch, font).on("all", browserSync.reload);
+	watch(path.fonts.watch, fonts).on("all", browserSync.reload);
 }
 
 // Удаление директории public
@@ -180,7 +180,7 @@ const server = () => {
 // Сборка для продакшина
 const build = series(
 	clear,
-	parallel(html, sass, js, img, font), //Если используем sass то меняем с css на sass. Или наоборот.
+	parallel(html, sass, js, img, fonts), //Если используем sass то меняем с css на sass. Или наоборот.
 );
 
 // Разработка
@@ -198,7 +198,7 @@ exports.img = img;
 exports.sass = sass;
 exports.watch = wather;
 exports.clear = clear;
-exports.font = font;
+exports.fonts = fonts;
 exports.build = build; 
 exports.default = dev; 
 
