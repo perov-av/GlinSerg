@@ -1,11 +1,39 @@
 @media screen and ( max-width: 1200px )
-	
+	.header__menu-link
+		font-size: 1.2rem
+	.header__phone
+		font-size: 1.1rem
+	.header__logo
+		width: 15%
+	.header__menu > ul
+		gap: 2rem
 
 @media screen and ( max-width: 990px )
+	.header__menu-link
+		font-size: 1.05rem
+	.header__phone
+		font-size: .95rem
+		.bg-phone
+			width: 1.2rem
+	.header__menu > ul
+		gap: 1rem
 	
-
 @media screen and ( max-width: 767px )
-	
+	.header__menu
+		display: none
+	.toggle
+		display: block
+	.header__logo
+		width: 18%
+	.header__phone
+		font-size: 1.1rem
+		.bg-phone
+			width: 1.5rem
 
 @media screen and ( max-width: 480px )
-	
+	.header__phone
+		font-size: .95rem
+		.bg-phone
+			width: 1.2rem
+	.toggle, .toggle::after, .toggle::before
+		width: 25px

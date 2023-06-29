@@ -2,6 +2,7 @@
 	height: 100vh
 	background-size: cover
 	background-repeat: no-repeat
+	background-position: center
 	color: $white
 	position: relative
 	&::after
@@ -17,8 +18,15 @@
 	display: flex
 	justify-content: space-between
 	align-items: center
+	padding: 2rem 0
+	max-width: 100%
+.header__wrap
+	position: fixed
 	z-index: 5
-.header__logo
+	top: 0
+	left: 0
+	width: 100%
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0.16) 0%, rgba(0, 0, 0, 0.00) 100%)
 .header__menu > ul
 	display: flex
 	justify-content: space-between
@@ -26,10 +34,53 @@
 	font-family: $fontMenu
 	font-weight: 700
 .header__menu-item
+	position: relative
+.header__menu-item::after, .header__phone a::after
+	content: ""
+	display: block
+	background-color: $white
+	height: 4px
+	width: 0%
+	left: 50%
+	position: absolute
+	transition: width $transition
+	transform: translateX(-50%)
+.header__menu-item:hover::after, .header__phone a:hover::after
+	width: 100%
+.header__menu-item.active
+	border-bottom: 4px solid $white
 .header__menu-link
 	display: block
 	width: 100%
+	font-size: 1.56rem
 .header__phone
 	font-family: $fontButton
 	font-weight: 700
 	font-size: 1.313rem
+	padding-left: 35px
+	position: relative
+	.bg-phone
+		position: absolute
+		top: 2px
+		left: 5px
+		width: 1.56rem
+.logo-black
+	display: none
+.phone-black
+	display: none
+.header__wrap.nav-fixed
+	color: $dark
+	.logo-black, .phone-black
+		display: block
+	.header__menu-item.active
+		border-bottom: 4px solid $dark	
+	.logo-white, .phone-white
+		display: none
+	.header__menu-item::after, .header__phone a::after
+		background-color: $dark
+// .header__logo
+// 	flex-grow: 0
+// .header__menu
+// 	flex-grow: 1
+// .header__phone
+// 	flex-grow: 0
