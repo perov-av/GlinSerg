@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+	// Добавление класса при скролле для меню
 	$(window).scroll(function(){
 		const mainOffset = $('#main').offset().top;
 		const scrolled = $(this).scrollTop();
@@ -10,20 +10,25 @@ $(document).ready(function(){
 			$('#header__wrap').removeClass('nav-fixed')
 		}
 	});
-// Добавляем класс в шапку при скролле
-	// window.onscroll = function() {
-	// 	scrollFunction()
-	// };
-	// function scrollFunction() {
-	// 	let scrollPos = 500;
-	// 	let header = document.getElementById('header__wrap');
-	// 	if(document.body.scrollTop > scrollPos || document.documentElement.scrollTop > scrollPos) {
-	// 		header.classList.add('active');
-	// 	} else {
-	// 		header.classList.remove('active');
-	// 	}
-	// }
 
 
 
+
+});
+
+$('.open-gallery-link').click(function() {
+  
+  var items = [];
+  $( $(this).attr('href') ).find('.slide').each(function() {
+    items.push( {
+      src: $(this) 
+    } );
+  });
+  
+  $.magnificPopup.open({
+    items:items,
+    gallery: {
+      enabled: true 
+    }
+  });
 });

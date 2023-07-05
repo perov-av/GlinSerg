@@ -43,9 +43,9 @@ const html = () => {
 	.pipe(fileInclude())
 	.pipe(webpHtml())
 	.pipe(size({title: "Все HTML ДО сжатия"}))
-	.pipe(htmlmin({
-		collapseWhitespace: true
-	}))
+	// .pipe(htmlmin({
+	// 	collapseWhitespace: true
+	// }))
 	.pipe(size({title: "Все HTML ПОСЛЕ сжатия"}))
 	.pipe(dest(path.html.dest))
 }
@@ -107,7 +107,7 @@ const js = () => {
 	}))
 	.pipe(babel())
 	.pipe(dest(path.js.dest, {sourcemaps: true}))
-	.pipe(concat("app.min.js"))
+	// .pipe(concat("app.min.js"))
 	.pipe(size({title: "Все JS ДО сжатия"}))
 	.pipe(uglify())
 	.pipe(size({title: "Все JS ПОСЛЕ сжатия"}))
