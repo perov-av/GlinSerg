@@ -81,6 +81,36 @@
 		display: none
 	.header__menu-item::after, .header__phone a::after
 		background-color: $dark
+.nav-fixed
+	.toggle
+		background-color: $dark
+		&::after, &::before
+			background-color: $dark
+			
+
+
+button.mfp-arrow
+	width: 56px
+	height: 56px
+	border: 1px solid rgba(41, 41, 41, 0.16)
+	border-radius: 50%
+	background-color: $white
+	margin: -55px 20px 0
+
+.mfp-arrow-right:after, .mfp-arrow-right:before,
+.mfp-arrow-left:after, .mfp-arrow-left:before
+	border: none
+
+button.mfp-arrow-right
+	background-image: url(../img/arrow-right.webp)
+	background-repeat: no-repeat
+	background-position: center
+	background-color: $white
+button.mfp-arrow-left
+	background-image: url(../img/arrow-left.webp)
+	background-repeat: no-repeat
+	background-position: center
+	background-color: $white
 
 .hidden
 	width: 1px
@@ -169,10 +199,10 @@
 		opacity: 0
 		transform: scale(1.8)
 
-.section__title
+h2.section__title
 	font-family: $fontTitle
 	font-size: 3.5rem
-	color: $dark
+	color: #4c4c4c
 	text-align: center
 	margin-top: 1.625rem
 	margin-bottom: 2.32rem

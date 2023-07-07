@@ -32,3 +32,9 @@ $('.open-gallery-link').click(function() {
     }
   });
 });
+
+$('.open-popup-link').magnificPopup({
+  type:'inline',
+  midClick: true,
+  mainClass: 'custom-popup-class'
+});
