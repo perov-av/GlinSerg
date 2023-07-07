@@ -186,7 +186,7 @@ const build = series(
 // Разработка
 const dev = series(
 	build,
-	parallel(server, wather)
+	parallel(wather, server)
 ); 
 
 

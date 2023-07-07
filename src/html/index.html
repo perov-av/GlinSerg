@@ -12,12 +12,12 @@
 	<main id="main">
 		<section class="section-btn-form">
 			<a href="#form" class="btn open-popup-link">Задать вопрос</a>
-
+	
 			<form id="form" class="form mfp-hide" action="">
 				
 				<label for="name">Представьтесь, пожалуйста  <span>*</span></label>
 				<input id="name" type="text" name="name" autocomplete required>
-
+	
 				<label for="phone">Ваш номер телефона  <span>*</span></label>
 				<input id="phone" type="telephone" name="phone" autocomplete required>
 				
@@ -26,11 +26,14 @@
 				
 				<label for="msg">Задайте вопрос:</label>
 				<textarea id="msg" type="text" name="msg" rows="5" cols="33"></textarea>
-
+	
 				<input class="btn" type="submit" value="Отправить">
 			</form>
 		</section>
-
+		
+		@@include("templates/about.html")
+		@@include("templates/room.html")
+		
 		<br>
 <br>
 <br>
@@ -80,6 +83,7 @@
 	
 	<script src="js/jquery.min.js"></script>
 	<script src="js/magnificpopup.min.js"></script>
+	<script src="js/slick.min.js"></script>
 	<script src="js/main.js"></script>
 </body>
 </html>
