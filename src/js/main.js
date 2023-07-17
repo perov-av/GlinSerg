@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	
 	// Добавление класса при скролле для меню
 	$(window).scroll(function(){
 		const mainOffset = $('#main').offset().top;
@@ -19,8 +20,11 @@ $(document).ready(function(){
 		slidesToScroll:3,
 		speed:2000,
 		easing:'ease',
+		pauseOnFocus: true,
+		pauseOnHover: true,
 		infinite:true,
 		autoplay:true,
+		swipe: true,
 		responsive: [
 			{
 				breakpoint: 1024,
@@ -49,6 +53,9 @@ $(document).ready(function(){
 		],
 	});
 
+	
+
+	// Магнифики попапы
 	$('.open-gallery-link').click(function() {
   
 		var items = [];
@@ -71,18 +78,40 @@ $(document).ready(function(){
 		midClick: true,
 		mainClass: 'custom-popup-class'
 	});
+
 	$('.room__item').magnificPopup({
-		type:'inline',
-		midClick: true,
-		mainClass: 'custom-popup-class'
+		callbacks: {
+			open: function() {
+				$('.room__main-slider').slick({
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					arrows: false,
+					fade: true,
+					asNavFor: '.room__nav-slider',
+					dots: false,
+				});
+				
+				$('.room__nav-slider').slick({
+					slidesToShow: 3,
+					slidesToScroll: 1,
+					asNavFor: '.room__main-slider',
+					dots: false,
+					centerMode: true,
+					focusOnSelect: true,
+					arrows: false,
+				});
+			}
+		}
 	});
 	
+
+	// Плавный скролл до элемента
 	$('.header__menu a').on('click', function() {
 	
 		let href = $(this).attr('href');
 	
 		$('html, body').animate({
-				scrollTop: $(href).offset().top
+				scrollTop: $(href).offset().top-110
 		}, {
 				duration: 650,   // по умолчанию «400» 
 				easing: "linear" // по умолчанию «swing» 
