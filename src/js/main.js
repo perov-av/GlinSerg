@@ -1,3 +1,5 @@
+// const { reload } = require("browser-sync");
+
 $(document).ready(function(){
 	
 	// Добавление класса при скролле для меню
@@ -100,6 +102,10 @@ $(document).ready(function(){
 					focusOnSelect: true,
 					arrows: false,
 				});
+			},
+			close: function(){
+				$('.room__main-slider').slick('unslick')
+				$('.room__nav-slider').slick('unslick')
 			}
 		}
 	});
