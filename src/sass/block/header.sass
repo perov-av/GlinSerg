@@ -30,6 +30,9 @@
 	width: 100%
 	border-radius: 16px 16px 0px 0px
 	background: linear-gradient(180deg, rgba(0, 0, 0, 0.16) 0%, rgba(0, 0, 0, 0.00) 100%)
+	.header__menu.open
+		.header__menu-item.active, .header__menu-item::after, .header__phone a::after
+			border-bottom: 4px solid $dark	
 .header__menu > ul
 	display: flex
 	justify-content: space-between
@@ -82,11 +85,35 @@
 	.header__menu-item::after, .header__phone a::after
 		background-color: $dark
 .nav-fixed
+	.toggle.active
+		background-color: transparent
 	.toggle
 		background-color: $dark
 		&::after, &::before
 			background-color: $dark
-			
+.header__menu
+	position: relative
+// Мобильное меню
+.header__menu.open
+	display: block
+	position: absolute
+	top: 90%
+	left: 50%
+	transform: translateX(-50%)
+	z-index: 50
+	color: $dark
+	min-width: 280px
+	max-width: 450px
+	background-color: $light
+	padding: 40px 60px
+	ul
+		// z-index: 50
+		position: relative
+		display: flex
+		flex-direction: column
+		gap: 20px
+		justify-content: center
+		align-items: center
 
 
 button.mfp-arrow
@@ -117,7 +144,7 @@ button.mfp-arrow-left
 	height: 1px
 	opacity: 0
 .header__slogan
-	z-index: 5
+	z-index: 3
 	margin-top: 20rem
 	font-family: $fontTitle
 	font-size: 3.5rem
@@ -128,7 +155,7 @@ button.mfp-arrow-left
 
 .header__bottom
 	position: relative
-	z-index: 5
+	z-index: 3
 	display: flex
 	justify-content: space-between
 	align-items: center

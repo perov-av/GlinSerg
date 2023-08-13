@@ -13,7 +13,7 @@ $(document).ready(function(){
 			$('#header__wrap').removeClass('nav-fixed')
 		}
 	});
-// Слайдер
+// Слайдер с комнатами
 	$('.room__wrap').slick({
 		arrows: true,
 		dots: false,
@@ -55,6 +55,21 @@ $(document).ready(function(){
 		],
 	});
 
+	// Слайдер с достопримечательностями
+	$('.gid__wrap').slick({
+		arrows: true,
+		dots: false,
+		adaptiveHeight:true,
+		slidesToShow:1,
+		slidesToScroll:1,
+		speed:2000,
+		easing:'ease',
+		pauseOnFocus: true,
+		pauseOnHover: true,
+		infinite:false,
+		autoplay:false,
+		swipe: true
+	});
 	
 
 	// Магнифики попапы
@@ -75,6 +90,7 @@ $(document).ready(function(){
 		});
 	});
 	
+	// Слайдеры в попабе с комнатами
 	$('.open-popup-link').magnificPopup({
 		type:'inline',
 		midClick: true,
@@ -126,6 +142,43 @@ $(document).ready(function(){
 		return false;
 	});
 	
+	$('.footer-link').on('click', function() {
+	
+		let href = $(this).attr('href');
+	
+		$('html, body').animate({
+				scrollTop: $(href).offset().top-110
+		}, {
+				duration: 650,   // по умолчанию «400» 
+				easing: "linear" // по умолчанию «swing» 
+		});
+	
+		return false;
+	});
+	// добавление класса active у пунктов меню на клик
+	var selector, elems, makeActive;
+
+	selector = '.header__menu-item';
+	elems = document.querySelectorAll(selector);
+	
+	makeActive = function () {
+		for (var i = 0; i < elems.length; i++)
+			elems[i].classList.remove('active');
+			this.classList.add('active');
+			
+	};
+	for (var i = 0; i < elems.length; i++)
+			elems[i].addEventListener('mousedown', makeActive);
+
+	// toggle Мобильное меню
+	$('#toggle').click(function () {
+		$('#toggle').toggleClass('active')
+		$('.header__menu').toggleClass('open')	
+	});
+	$('.header__menu-link').click(function () {
+		$('#toggle').removeClass('active')
+		$('.header__menu').removeClass('open')
+	});
 
 });
 
