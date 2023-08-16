@@ -100,7 +100,16 @@
 	.footer__nav
 		grid-column: -1/1
 		justify-content: space-evenly
-		
+	.room__card
+		.room__card-title
+			font-size: 32px
+	.room__descrp
+		p.room__descrp-price
+			font-size: 16px
+	.room__props
+		grid-template-columns: 1fr 1fr
+	.room__main-slider
+		margin-bottom: 5px
 @media screen and ( max-width: 650px )
 	.about__wrap
 		grid-template-columns: 1fr
@@ -138,6 +147,10 @@
 		align-items: center
 		justify-items: center
 		gap: 20px
+	body
+		font-size: 20px
+	.text
+		text-indent: 20px
 @media screen and ( max-width: 480px )
 	.header__phone
 		font-size: .95rem
@@ -162,3 +175,15 @@
 			grid-template-rows: 4fr 1fr 1fr
 	h2.section__title
 		font-size: 34px
+	.room__props
+		grid-template-columns: 1fr
+	.room__card
+		.room__card-wrap
+			text-align: left
+	h2.section__title
+		margin-bottom: 35px
+	.section-btn-form
+		padding-top: 20px
+	h4.subtitle
+		font-size: 13px
+		padding-top: 18px
